@@ -17,7 +17,7 @@ set hlsearch
 set mouse=a
 set nowrap
 set backspace=indent,eol,start
-set shortmess-=S
+set shortmess-=S  " show matched number when searching
 
 " encoding
 set encoding=utf-8  " internal
@@ -30,14 +30,14 @@ set fileformat=unix
 colorscheme desert
 
 " key mapping
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 "  normal mode
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <silent> <Leader>q :q<CR>
 "nnoremap j gj
 "nnoremap k gk
-nnoremap <silent> <C-e> :nohlsearch<CR><Esc>
+nnoremap <silent> <C-e> :nohlsearch<CR><C-l><Esc>
 nnoremap <Leader>o o<Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -72,6 +72,6 @@ vnoremap <C-e> <Esc>
 vnoremap y y`]
 vnoremap p p`]
 
-"  auto commenting with space+c
+"  auto commenting with space + c
 nmap <Leader>c gcc
 vmap <Leader>c gcc

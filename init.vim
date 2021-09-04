@@ -15,16 +15,16 @@ syntax enable
 set number
 "set cursorline
 set virtualedit=onemore
-set showmatch  "show corespondent parenthesis
-set autoindent  "Enter pressed, indent same space as the previous row
-set tabstop=4  "how many spaces are counted as a tab
-set shiftwidth=4  "how many spaces are inserted when indenting
-set incsearch  "begin searching as soon as a character is input
+set showmatch  " show corespondent parenthesis
+set autoindent  " Enter pressed, indent same space as the previous row
+set tabstop=4  " how many spaces are counted as a tab
+set shiftwidth=4  " how many spaces are inserted when indenting
+set incsearch  " begin searching as soon as a character is input
 set hlsearch
 set mouse=a
-"set title  "show title of the document
+"set title  " show title of the document
 set nowrap
-set clipboard=unnamed  "yanked text to clipboard
+set clipboard=unnamed  " yanked text to clipboard
 set backspace=indent,eol,start
 
 " encoding
@@ -41,14 +41,14 @@ colorscheme iceberg
 let g:diminactive_enable_focus = 1
 
 " key mapping
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 "  normal mode
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <silent> <Leader>q :q<CR>
 nnoremap j gj
 nnoremap k gk
-nnoremap <C-e> :nohlsearch<CR><Esc>
+nnoremap <silent> <C-e> :nohlsearch<CR><C-l><Esc>
 nnoremap <Leader>o o<Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -59,7 +59,7 @@ nnoremap sh <C-w>h
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
 "  insert mode
 inoremap <C-e> <Esc>
@@ -70,8 +70,6 @@ vnoremap y y`]
 vnoremap p p`]
 
 "  auto commenting with space + c
-" nmap <Leader>c <Plug>(caw:zeropos:toggle)
-" vmap <Leader>c <Plug>(caw:zeropos:toggle)
 nmap <Leader>c gcc
 vmap <Leader>c gcc
 
