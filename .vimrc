@@ -73,5 +73,5 @@ vnoremap y y`]
 vnoremap p p`]
 
 "  auto commenting with space+c
-nmap <Leader>c <Plug>(caw:zeropos:toggle)
-vmap <Leader>c <Plug>(caw:zeropos:toggle)
+nmap <Leader>c gcc
+vmap <Leader>c gcc
