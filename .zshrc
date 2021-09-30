@@ -1,9 +1,19 @@
 #!/bin/zsh
+#
+# General
+setopt ignore_eof  # ignore C-d
+setopt print_eight_bit  # display 8bit chars literally
 
 # History
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=${HOME}/.zsh_history
+setopt extended_history  # add timestamp to the history file
+setopt hist_ignore_dups  # don't add to history if the command is the same as the one immediately before
+setopt share_history  # share history among several zshells (which means the commands are added to history right after execution)
+
+# Completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'  # ignore case
 
 # Prompt
 PROMPT="
@@ -62,4 +72,5 @@ zinit light-mode for \
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 zinit light zdharma/history-search-multi-word
