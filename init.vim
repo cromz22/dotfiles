@@ -8,6 +8,7 @@ Plug 'cocopon/iceberg.vim'  " color scheme
 Plug 'blueyed/vim-diminactive'  " dim when focus is lost
 Plug 'tmux-plugins/vim-tmux-focus-events'  " share focus info with tmux
 Plug 'neovim/nvim-lspconfig'  " language server
+Plug 'alvan/vim-closetag'  "close html tags
 call plug#end()
 
 " general
@@ -39,6 +40,9 @@ colorscheme iceberg
 
 " focus
 let g:diminactive_enable_focus = 1
+
+" files to enable closetag
+let g:closetag_filenames = '*.html,*.jsx,*.tsx'
 
 " key mapping
 let g:mapleader = "\<Space>"
@@ -111,7 +115,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer' }
+local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
