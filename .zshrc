@@ -21,6 +21,7 @@ PROMPT="
 %# "
 
 # Aliases
+unalias ls
 alias l='ls -pt --color=auto'
 alias la='ls -aF --color=tty'
 alias ll='ls -AlFh --color=auto'
@@ -30,6 +31,9 @@ alias -g .....='../../../..'
 alias tn='tmux new -s'
 alias ta='tmux a -t'
 alias tl='tmux ls'
+alias sl='screen -ls'
+alias sr='screen -r'
+alias sn='screen -S'
 alias pv='python3 -m venv venv'
 alias va='. venv/bin/activate'
 alias vad='. .venv/bin/activate'
@@ -42,16 +46,36 @@ alias ns="nvidia-smi --query-gpu=timestamp,index,name,memory.used,memory.total,u
 alias nsp="nvidia-smi --query-compute-apps=pid,name,used_memory --format=csv | column -s, -t"
 alias nspid="nvidia-smi --query-compute-apps=pid --format=csv,noheader"
 alias wns='watch -n 0.5 "nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu --format=csv | column -s , -t"'
+alias p='python3'
+
+# Functions
+function load-nvm() {
+	set -x
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+}
+
+function load-conda() {
+	set -x
+	source ${HOME}/.miniconda3/etc/profile.d/conda.sh
+}
+
+function load-brew() {
+	set -x
+	eval "$(${HOME}/.linuxbrew/bin/brew shellenv)"
+	export HOMEBREW_NO_ENV_FILTERING=1  # not to use system git, etc.
+	# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.linuxbrew/lib"
+}
 
 # PATH
-# export PATH="$HOME/binaries/nvim-linux64/bin:$PATH"
+# export PATH="$HOME/.local/nvim-linux64/bin:$PATH"
 
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone git@github.com:zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -63,14 +87,18 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+    # zinit-zsh/z-a-rust \
+    # zinit-zsh/z-a-as-monitor \
+    # zinit-zsh/z-a-patch-dl \
+    # zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-zinit light zdharma/history-search-multi-word
+zinit light zdharma-continuum/history-search-multi-word
