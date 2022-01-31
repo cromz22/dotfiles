@@ -1,0 +1,16 @@
+[user]
+	name = cromz22
+	email = tt.pfr4343@gmail.com
+
+[alias]
+	s = status -u
+	a = add
+	al = add --all .
+	b = branch
+	co = checkout
+	cob = checkout -b
+	cm = commit -m
+	l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
+
+[init]
+	defaultBranch = main
