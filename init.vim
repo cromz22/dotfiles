@@ -52,7 +52,6 @@ nnoremap <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
 nnoremap j gj
 nnoremap k gk
-nnoremap <silent> <C-e> :nohlsearch<CR><C-l><Esc>
 nnoremap <Leader>o o<Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
@@ -64,14 +63,13 @@ nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 nnoremap <silent> <Leader>t :NERDTreeToggle<CR>
 nnoremap <Leader>b :!black %<CR>
+nnoremap p p`]
 
 "  insert mode
-inoremap <C-e> <Esc>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
 "  visual mode
-vnoremap <C-e> <Esc>
 vnoremap y y`]
 vnoremap p p`]
 

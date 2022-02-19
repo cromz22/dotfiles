@@ -37,17 +37,16 @@ nnoremap <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :q<CR>
 "nnoremap j gj
 "nnoremap k gk
-nnoremap <silent> <C-e> :nohlsearch<CR><C-l><Esc>
 nnoremap <Leader>o o<Esc>
 nnoremap <S-h> ^
 nnoremap <S-l> $
-nnoremap s <Nop>
-nnoremap ss :split<CR>
-nnoremap sv :vsplit<CR>
-nnoremap sh <C-w>h
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
+nnoremap <silent> <Leader>s :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap p p`]
 
 "  insert mode
 function ClosePair(char)
@@ -58,7 +57,6 @@ function ClosePair(char)
 	endif
 endf
 
-inoremap <C-e> <Esc>
 inoremap ( ()<Left>
 inoremap <expr> ) ClosePair(')')
 inoremap { {}<Left>
@@ -67,8 +65,10 @@ inoremap [ []<Left>
 inoremap <expr> ] ClosePair(']')
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
 "  visual mode
-vnoremap <C-e> <Esc>
 vnoremap y y`]
 vnoremap p p`]
 
