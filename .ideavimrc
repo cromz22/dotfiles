@@ -1,0 +1,51 @@
+" General settings
+syntax enable                   " turn on syntax highlighting
+set number                      " show row numbers
+set virtualedit=onemore         " enable for the cursor to move one more character at the end of rows
+set showmatch                   " highlight corresponding parenthesis
+set autoindent                  " when Enter is pressed, indent with the same space as the previous row
+set tabstop=4                   " how many spaces are counted as a tab
+set shiftwidth=4                " how many spaces are inserted when indenting
+set backspace=indent,eol,start  " allow backspacing over indent, line breaks, and the position you started insert mode
+set mouse=a                     " enable mouse control
+
+" Searching
+set incsearch                   " begin searching as soon as characters are input
+set hlsearch                    " highlight when searching
+set shortmess-=S                " show the number of matched strings when searching
+
+" Encoding
+set encoding=utf-8                                " file encoding internally used
+set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp  " file encoding when reading files
+set fileencoding=utf-8                            " file encoding when writing files
+set fileformats=unix,dos,mac                      " line terminators when reading files
+set fileformat=unix                               " line terminators when writing files
+
+" colors
+" colorscheme desert
+
+" key mapping
+let g:mapleader = "\<Space>"
+
+nnoremap <Leader>w :w<CR>
+nnoremap <silent> <Leader>q :q<CR>
+"nnoremap j gj
+"nnoremap k gk
+nnoremap <Leader>o o<Esc>
+nnoremap <S-h> ^
+nnoremap <S-l> $
+nnoremap <silent> <Leader>s :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap p p`]
+
+"  insert mode
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
+"  visual mode
+vnoremap y y`]
+vnoremap p p`]
