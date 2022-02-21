@@ -47,6 +47,8 @@ alias nsp="nvidia-smi --query-compute-apps=pid,name,used_memory --format=csv | c
 alias nspid="nvidia-smi --query-compute-apps=pid --format=csv,noheader"
 alias wns='watch -n 0.5 "nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu --format=csv | column -s , -t"'
 alias p='python3'
+alias vt='nvim `ls -t | head -n 1`'
+alias cdt='cd `ls -t | head -n 1`'
 
 # Functions
 function load-nvm() {
@@ -91,11 +93,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
-    # zinit-zsh/z-a-rust \
-    # zinit-zsh/z-a-as-monitor \
-    # zinit-zsh/z-a-patch-dl \
-    # zinit-zsh/z-a-bin-gem-node
-
 ### End of Zinit's installer chunk
 
 zinit light zsh-users/zsh-syntax-highlighting
