@@ -1,17 +1,32 @@
 [user]
-	name = cromz22
-	email = tt.pfr4343@gmail.com
-
-[alias]
-	s = status -u
-	a = add
-	al = add --all .
-	b = branch
-	co = checkout
-	cob = checkout -b
-	cm = commit -m
-	l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso -n 10
-	ll = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
+    name = cromz22
+    email = tt.pfr4343@gmail.com
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[core]
+    editor = vim
+
+[diff]
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+
+[alias]
+    s = status -u
+    a = add
+    b = branch
+    df = diff
+    cm = commit -m
+    ll = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
+    l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso -n 10
+    dft = difftool
+    dlog = -c diff.external=difft log -p --ext-diff
