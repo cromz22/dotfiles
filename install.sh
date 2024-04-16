@@ -28,3 +28,4 @@ $HOME/.cargo/bin/cargo install ripgrep
 $HOME/.cargo/bin/cargo install --locked bat
 $HOME/.cargo/bin/cargo install exa
 $HOME/.cargo/bin/cargo install git-delta
+$HOME/.cargo/bin/cargo install difftastic
