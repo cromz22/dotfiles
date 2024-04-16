@@ -18,9 +18,8 @@
 
 1. Execute `install.sh`. This script creates symlinks to the dotfiles and installs the following tools and some useful tools that can be installed with them.
 
-	- [vim-plug](https://github.com/junegunn/vim-plug) 
+	- [vim-plug](https://github.com/junegunn/vim-plug) (only for vim) 
 	- [nvm](https://github.com/nvm-sh/nvm)
-	- [Homebrew](https://brew.sh/)
 	- [Rust](https://www.rust-lang.org/tools/install)
 
 	```
